@@ -29,10 +29,10 @@
     "lottie-react": "latest"
   },
   "scripts": {
-    "start": "npm-run-all -p build serve",
+    "build_serve": "npm-run-all -p build serve",
     "build": "webpack -w",
     "serve": "nodemon --ignore ./build --exec babel-node -- server.js",
-    "production": "cross-env NODE_ENV=production npm start",
+    "start": "cross-env NODE_ENV=production npm run build_serve",
     "post-update": "echo \"codesandbox preview only, need an update\" && pnpm update --latest"
   }
 }

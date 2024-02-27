@@ -64,7 +64,7 @@ app.use('/build', express.static('build'));
 // This is fired every time the server-side receives a request.
 app.use(handleRender);
 
-const port = 3000;
+const port = 8080;
 app.listen(port, () => {
   // eslint-disable-next-line no-console
   console.log(`Listening on ${port}`);
