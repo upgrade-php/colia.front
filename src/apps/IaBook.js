@@ -5,7 +5,7 @@ import Link from '@mui/material/Link';
 import { styled } from '@mui/system';
 import ChatInput from '../components/Chatinput';
 import ColiaApi from '../apis/coliaApi';
-import Lottie from 'lottie-react';
+import CircularProgress from '@mui/material/CircularProgress'
 import loadingPan from '../assets/lotties/loading.json';
 import PredefineMessage from '../components/PredefineMessage';
 
@@ -139,7 +139,7 @@ export default function App() {
               }
             }
           >
-            <Lottie animationData={loadingPan} loop={true} style={{ width: 'clamp(40px,18vmin,80px)' }} />
+             <CircularProgress />
             <Typography fontFamily="Google Sans" fontWeight="300" fontSize="12px" color="#614646">
               carregando...
             </Typography>

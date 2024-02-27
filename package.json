@@ -26,7 +26,7 @@
     "react-dom": "latest",
     "webpack": "latest",
     "webpack-cli": "latest",
-    "lottie-react": "^2.4.0"
+    "lottie-react": "latest"
   },
   "scripts": {
     "start": "npm-run-all -p build serve",
