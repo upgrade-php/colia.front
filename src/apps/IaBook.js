@@ -119,6 +119,7 @@ export default function App() {
           <Typography variant="h4" component="h1" sx={{ mb: 2, textAlign: 'center' }}>
             Hábitos Atômicos IA
           </Typography>
+          <Typography component="p" sx={{textAlign: 'center' }}>Acesse o conhecimento com apenas uma pergunta simples e direcionada</Typography>
         </Box>
         {sending && (
           <Stack
