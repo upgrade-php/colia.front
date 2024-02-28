@@ -53,8 +53,8 @@ export default function App() {
 
   const handleOnSendMsg = async question => {
     setSending(true);
+    setPredefinedPrompted(true);
     const response = await coliaApi.book('habitos_atomicos', question)
-    console.log(response)
     const responseHtml = formatResponseToHtml(response['response'])
     const content = `<h2>${question}</h2>${responseHtml}`
     setContent(content)
@@ -95,9 +95,7 @@ export default function App() {
   const handleClickPredefinedPrompt = predefinedPrompt => {
     console.log(predefinedPrompt)
     predefinedPrompt.type === 'prompt' ? handleOnSendMsg(predefinedPrompt.content) : inputRef.current.focus();
-
-    setPredefinedPrompted(true);
-  };
+  }
 
 
 
@@ -145,6 +143,7 @@ export default function App() {
               carregando...
             </Typography>
           </Stack>)}
+
         {!predefinedPrompted && (
           <Stack direction="column-reverse" alignItems="center" justifyContent="center" width="100%" spacing={2}>
             {predefinedPrompt &&
@@ -162,7 +161,8 @@ export default function App() {
               ))}
           </Stack>
         )}
-        {content ? (
+
+        {content && !sending ? (
           <Typography
             variant="body"
             component='article'
